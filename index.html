@@ -707,10 +707,7 @@
 <!-- NAVIGATION -->
 <nav>
   <a href="#hero" class="nav-logo">
-    <img src="DTA_Main_Logo.jpg" alt="DTA Logo" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,168,76,0.4);">
-    <div>
-      <div class="nav-name">DTA Consulting Kft.</div>
-    </div>
+    <img src="DTA_Main_Logo.jpg" alt="DTA Logo" style="width:48px;height:48px;object-fit:contain;">
   </a>
   <ul class="nav-links">
     <li><a href="#about">Rólunk</a></li>
@@ -776,41 +773,65 @@
 <!-- SERVICES -->
 <section style="padding: 7rem 4rem; background: var(--black);">
   <div id="services" style="max-width: 1200px; margin: 0 auto;">
-    <div class="services-header" style="padding: 0; margin-bottom: 4rem;">
+
+    <!-- COACHING BLOKK -->
+    <div class="services-header" style="padding: 0; margin-bottom: 3rem;">
       <div class="reveal">
-        <div class="section-eyebrow">Szolgáltatások</div>
-        <h2>Coaching és<br><em>tanácsadás</em></h2>
+        <div class="section-eyebrow">Elsődleges fókusz</div>
+        <h2>Coaching<br><em>szolgáltatások</em></h2>
       </div>
-      <p class="services-intro reveal">Coaching folyamataink középpontjában az ember áll – legyen szó egyéni fejlődésről vagy csapatdinamikáról. Az üzleti tanácsadás ezt a mélységet egészíti ki szervezeti és stratégiai kontextussal.</p>
+      <p class="services-intro reveal">Coaching folyamataink középpontjában az ember áll – az önismeret, a tudatosság és a valódi változás. Egyéneknek és csapatoknak egyaránt.</p>
     </div>
 
-    <div class="services-grid" style="margin: 0;">
+    <div class="services-grid" style="margin: 0 0 5rem 0; grid-template-columns: repeat(4, 1fr);">
       <div class="service-card reveal">
         <div class="service-number">01</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         </div>
         <div class="service-title">Personal Coaching</div>
-        <p class="service-desc">Egyéni fejlődési folyamat, amely erősíti az önismeretet, a tudatosságot és a döntési képességet – legyen szó karrierváltásról, vezetői szerep fejlesztéséről vagy személyes céljairól.</p>
+        <p class="service-desc">Egyéni fejlődési folyamat, amely erősíti az önismeretet, a tudatosságot és a döntési képességet – karrierváltástól a személyes célokig.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-number">02</div>
         <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
         </div>
         <div class="service-title">Team Coaching</div>
-        <p class="service-desc">A csapat mint rendszer fejlesztése: együttműködési minták tudatosítása, közös célok tisztázása, a csapat valódi potenciáljának kibontása strukturált coaching folyamaton keresztül.</p>
+        <p class="service-desc">A csapat mint rendszer fejlesztése: együttműködési minták tudatosítása, közös célok és a valódi csoportpotenciál kibontása.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-number">03</div>
         <div class="service-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M20 8v6m-3-3h6" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
         </div>
-        <div class="service-title">Executive Coaching</div>
-        <p class="service-desc">Felsővezetők és C-szintű szakemberek személyre szabott kísérése: döntéshozatal, vezetői jelenlét és reziliencia fejlesztése a szervezeti kontextusban.</p>
+        <div class="service-title">ADHD Coaching</div>
+        <p class="service-desc">ADHD-val élő felnőttek és fiatalok támogatása: fókusz, szervezettség, önszabályozás és erősségalapú stratégiák fejlesztése a mindennapokban.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-number">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="service-title">Kamasz Coaching</div>
+        <p class="service-desc">Serdülők és fiatal felnőttek kísérése önismeret, identitás, célok és az élet nagy kérdéseinek megválaszolásában – biztonságos, ítéletmentes térben.</p>
+      </div>
+    </div>
+
+    <div class="gold-divider" style="margin-bottom: 5rem;"></div>
+
+    <!-- TANÁCSADÁS BLOKK -->
+    <div class="services-header" style="padding: 0; margin-bottom: 3rem;">
+      <div class="reveal">
+        <div class="section-eyebrow">Másodlagos fókusz</div>
+        <h2>Üzleti<br><em>tanácsadás</em></h2>
+      </div>
+      <p class="services-intro reveal">A coaching szemlélet mélységével végzett üzleti tanácsadás: szervezetek, csapatok és stratégiák fejlesztése a fenntartható növekedés érdekében.</p>
+    </div>
+
+    <div class="services-grid" style="margin: 0; grid-template-columns: repeat(3, 1fr);">
+      <div class="service-card reveal">
+        <div class="service-number">05</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
@@ -818,7 +839,7 @@
         <p class="service-desc">Közép- és hosszú távú stratégia kidolgozása, piaci pozicionálás és növekedési utak feltérképezése – a coaching szemlélet mélységével és az üzleti tanácsadás precizitásával.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-number">05</div>
+        <div class="service-number">06</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
@@ -826,7 +847,7 @@
         <p class="service-desc">Szervezeti kultúra és struktúra fejlesztése, változásmenedzsment, az emberek és folyamatok összehangolása a stratégiai célokkal.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-number">06</div>
+        <div class="service-number">07</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
@@ -834,6 +855,7 @@
         <p class="service-desc">Egyedi tréningprogramok és workshopok csapatok számára – önismeret, kommunikáció, csapatdinamika és vezetői készségek fejlesztésére.</p>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -925,12 +947,17 @@
           <label>Érdeklődés tárgya</label>
           <select>
             <option value="" disabled selected>Válasszon szolgáltatást...</option>
-            <option>Üzleti Stratégia</option>
-            <option>Executive Coaching</option>
-            <option>Szervezetfejlesztés</option>
-            <option>Változásmenedzsment</option>
-            <option>Tréning & Workshop</option>
-            <option>Mentoring Program</option>
+            <optgroup label="── Coaching ──">
+              <option>Personal Coaching</option>
+              <option>Team Coaching</option>
+              <option>ADHD Coaching</option>
+              <option>Kamasz Coaching</option>
+            </optgroup>
+            <optgroup label="── Üzleti Tanácsadás ──">
+              <option>Üzleti Stratégia</option>
+              <option>Szervezetfejlesztés</option>
+              <option>Tréning & Workshop</option>
+            </optgroup>
           </select>
         </div>
         <div class="form-field">
