@@ -924,20 +924,16 @@
         <div class="form-row">
           <div class="form-field">
             <label>Név</label>
-            <input type="text" placeholder="Kovács János">
+            <input type="text" name="name" id="f-name" placeholder="Kovács János">
           </div>
           <div class="form-field">
             <label>E-mail</label>
-            <input type="email" placeholder="janos@ceg.hu">
+            <input type="email" name="email" id="f-email" placeholder="janos@ceg.hu">
           </div>
         </div>
         <div class="form-field">
-          <label>Cég neve</label>
-          <input type="text" placeholder="Vállalkozás Kft.">
-        </div>
-        <div class="form-field">
           <label>Érdeklődés tárgya</label>
-          <select>
+          <select name="szolgaltatas">
             <option value="" disabled selected>Válasszon szolgáltatást...</option>
             <optgroup label="── Coaching ──">
               <option>Life Coaching</option>
@@ -953,10 +949,16 @@
         </div>
         <div class="form-field">
           <label>Üzenet</label>
-          <textarea placeholder="Röviden írjon helyzetéről, kihívásairól..."></textarea>
+          <textarea name="uzenet" placeholder="Röviden írjon helyzetéről, kihívásairól..."></textarea>
         </div>
         <div class="form-submit">
-          <button class="btn-primary" style="width: 100%; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif;" type="button">Üzenet Küldése</button>
+          <button id="submit-btn" class="btn-primary" style="width: 100%; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif;" type="button">Üzenet Küldése</button>
+        </div>
+        <div id="form-success" style="display:none; margin-top:1rem; padding: 1rem; border: 0.5px solid var(--gold); color: var(--gold); font-size: 0.8rem; letter-spacing: 0.05em; text-align: center;">
+          ✓ Üzenete megérkezett! Hamarosan felvesszük Önnel a kapcsolatot.
+        </div>
+        <div id="form-error" style="display:none; margin-top:1rem; padding: 1rem; border: 0.5px solid #c0392b; color: #e74c3c; font-size: 0.8rem; letter-spacing: 0.05em; text-align: center;">
+          Hiba történt. Kérjük, írjon közvetlenül: erdeklodes@dta-consulting.hu
         </div>
       </div>
     </div>
@@ -979,6 +981,43 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.getElementById('submit-btn').addEventListener('click', async () => {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    if (!name || !email) {
+      alert('Kérjük, adja meg a nevét és e-mail címét!');
+      return;
+    }
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Küldés...';
+    btn.disabled = true;
+
+    const data = new FormData();
+    document.querySelectorAll('.contact-form input, .contact-form select, .contact-form textarea').forEach(el => {
+      if (el.name) data.append(el.name, el.value);
+    });
+
+    try {
+      const res = await fetch('https://formspree.io/f/mqeokebn', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-error').style.display = 'none';
+        document.querySelectorAll('.contact-form input, .contact-form select, .contact-form textarea').forEach(el => el.value = '');
+        btn.textContent = 'Elküldve ✓';
+      } else {
+        throw new Error();
+      }
+    } catch {
+      document.getElementById('form-error').style.display = 'block';
+      btn.textContent = 'Üzenet Küldése';
+      btn.disabled = false;
+    }
+  });
 </script>
 </body>
 </html>
