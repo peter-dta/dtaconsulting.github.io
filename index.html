@@ -900,7 +900,7 @@
             <div class="contact-dot"></div>
             <div>
               <div class="contact-item-label">E-mail</div>
-              <div class="contact-item-value"><a href="mailto:erdeklodes@dta-consulting.hu" style="color: var(--white-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--white-muted)'">erdeklodes@dta-consulting.hu</a></div>
+              <div class="contact-item-value"><a id="email-link" href="#" style="color: var(--white-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--white-muted)'"></a></div>
             </div>
           </div>
           <div class="contact-item">
@@ -958,7 +958,7 @@
           ✓ Üzenete megérkezett! Hamarosan felvesszük Önnel a kapcsolatot.
         </div>
         <div id="form-error" style="display:none; margin-top:1rem; padding: 1rem; border: 0.5px solid #c0392b; color: #e74c3c; font-size: 0.8rem; letter-spacing: 0.05em; text-align: center;">
-          Hiba történt. Kérjük, írjon közvetlenül: erdeklodes@dta-consulting.hu
+          Hiba történt. Kérjük, próbálja újra később vagy hívjon minket!
         </div>
       </div>
     </div>
@@ -982,6 +982,19 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // Email obfuscation - ROT13
+  function rot13(s) {
+    return s.replace(/[a-zA-Z]/g, c =>
+      String.fromCharCode(c.charCodeAt(0) + (c.toLowerCase() < 'n' ? 13 : -13))
+    );
+  }
+  const enc = 'reqrxybrqrf@qgn-pbafhygvat.uh';
+  const emailEl = document.getElementById('email-link');
+  const decoded = rot13(enc);
+  emailEl.textContent = decoded;
+  emailEl.href = 'mailto:' + decoded;
+
+  // Form submit
   document.getElementById('submit-btn').addEventListener('click', async () => {
     const name = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
