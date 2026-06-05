@@ -690,7 +690,8 @@
     section { padding: 5rem 1.5rem; }
     .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     .services-header { grid-template-columns: 1fr; padding: 0 1.5rem; }
-    .services-grid { grid-template-columns: 1fr; margin: 0 1.5rem; }
+    .services-grid { grid-template-columns: 1fr !important; margin: 0 !important; }
+    .service-card { padding: 2rem 1.5rem; }
     .values-list { grid-template-columns: 1fr 1fr; }
     .value-item:nth-child(2) { border-right: none; }
     .contact-inner { padding: 0 1.5rem; }
@@ -699,6 +700,9 @@
     #services { padding: 5rem 0; }
     #contact { padding: 5rem 0; }
     .about-stats { padding: 0; }
+    .services-header { margin-bottom: 2rem !important; }
+    section[style*="padding"] { padding: 5rem 1.5rem !important; }
+    #hero { padding: 0 1.5rem !important; background: var(--black) !important; }
   }
 </style>
 </head>
