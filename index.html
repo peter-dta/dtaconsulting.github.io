@@ -903,13 +903,6 @@
           <div class="contact-item">
             <div class="contact-dot"></div>
             <div>
-              <div class="contact-item-label">E-mail</div>
-              <div class="contact-item-value"><a id="email-link" href="#" style="color: var(--white-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--white-muted)'"></a></div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-dot"></div>
-            <div>
               <div class="contact-item-label">Telefon</div>
               <div class="contact-item-value"><a href="tel:+36703252600" style="color: var(--white-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--white-muted)'">+36 70 3 25 26 00</a></div>
             </div>
@@ -985,18 +978,6 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Email obfuscation - ROT13
-  function rot13(s) {
-    return s.replace(/[a-zA-Z]/g, c =>
-      String.fromCharCode(c.charCodeAt(0) + (c.toLowerCase() < 'n' ? 13 : -13))
-    );
-  }
-  const enc = 'reqrxybrqrf@qgn-pbafhygvat.uh';
-  const emailEl = document.getElementById('email-link');
-  const decoded = rot13(enc);
-  emailEl.textContent = decoded;
-  emailEl.href = 'mailto:' + decoded;
 
   // Form submit
   document.getElementById('submit-btn').addEventListener('click', async () => {
