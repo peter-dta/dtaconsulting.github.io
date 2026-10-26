@@ -24,7 +24,7 @@ Majd: http://localhost:8080
 - Logók: az SVG-k a lookbook képéről lettek újraépítve (a D, T, A jel mért geometriából, a CONSULTING felirat Montserrat Regular körvonalakból), nem az eredeti tervezői fájlból. Ha lesz eredeti vektoros fájl, cserélendők. A kerek emblémaikon gyűrűjének apró ívei közelítések.
 - Formspree: az űrlap az `xeaenrgd` azonosítójú formra küld (`index.html`, `action`). A Formspree-ben érdemes a domain-korlátozást beállítani, és az első levél megerősítését jóváhagyni.
 - Open Graph kép (`og:image`) – nincs.
-- Amikor a `dtax.hu` és a `kapcsolodascoaching.hu` élesedik: az `index.html`-ben az adott márkánál a kikommentezett `brand-cta` linket vissza kell tenni, a „Weboldal hamarosan” sort törölni, a láblécben pedig linkelni a márkát.
+- A `dtax.hu` és a `kapcsolodascoaching.hu` élesedett: a márkakártyákon és a láblécben linkelve vannak.
 - A márkák kiemelő színei (`--accent` az `index.html`-ben) csak javaslatok, nem hivatalos márkaszínek.
 
 ## Kézi ellenőrzést igényel
